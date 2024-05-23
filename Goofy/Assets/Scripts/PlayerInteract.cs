@@ -14,6 +14,8 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E)){
 
+            Debug.Log("E Pressed");
+
             RaycastHit hit;
 
             if(Physics.SphereCast(transform.position, interactRadius, transform.forward, out hit, interactRange, interactionLayer)){
