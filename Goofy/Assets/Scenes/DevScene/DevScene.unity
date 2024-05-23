@@ -98,7 +98,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: a24285d7b3ab2644096703c82e7b6b55,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 73803be1819472b45953f91f0c693336,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: d81f1b5efece85b4dba9d65c54b1f706,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1587219}
   - component: {fileID: 1587218}
   - component: {fileID: 1587217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,6 +845,7 @@ GameObject:
   - component: {fileID: 987325255}
   - component: {fileID: 987325254}
   - component: {fileID: 987325257}
+  - component: {fileID: 987325258}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -920,7 +921,7 @@ Transform:
   m_GameObject: {fileID: 987325253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.698, y: 1.922, z: 2.2}
+  m_LocalPosition: {x: 2.853, y: 0.424, z: 1.292}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1055,6 +1056,23 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &987325258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987325253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c407eb747cc51f740b6b2e874867f778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 2
+  interactRadius: 1
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &995847218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,25 +1531,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
     albedo: {r: 0.4996724, g: 0.5622641, b: 0.56113887, a: 1}
-    meanFreePath: 5
+    meanFreePath: 1
     blendingMode: 1
     priority: 0
     anisotropy: 0
     volumeMask: {fileID: 0}
     textureScrollingSpeed: {x: 0, y: 0, z: 0}
     textureTiling: {x: 1, y: 1, z: 1}
-    positiveFade: {x: 0.021551428, y: 0.054293603, z: 0.03577399}
-    negativeFade: {x: 0.021551428, y: 0.054293603, z: 0.03577399}
-    m_EditorUniformFade: 0.18
-    m_EditorPositiveFade: {x: 0.011973015, y: 0.030163111, z: 0.019874437}
-    m_EditorNegativeFade: {x: 0.011973015, y: 0.030163111, z: 0.019874437}
+    positiveFade: {x: 0.083333336, y: 0.25, z: 0.11111111}
+    negativeFade: {x: 0.083333336, y: 0.25, z: 0.11111111}
+    m_EditorUniformFade: 1
+    m_EditorPositiveFade: {x: 0, y: 0.025, z: 0.01111111}
+    m_EditorNegativeFade: {x: 0, y: 0.025, z: 0.01111111}
     m_EditorAdvancedFade: 0
-    size: {x: 8.352115, y: 3.3153079, z: 5.031589}
+    size: {x: 12, y: 4, z: 9}
     invertFade: 0
     distanceFadeStart: 10000
     distanceFadeEnd: 10000
     textureOffset: {x: 0, y: 0, z: 0}
-    falloffMode: 0
+    falloffMode: 1
     maskMode: 0
     materialMask: {fileID: 0}
   m_Version: 2
@@ -2206,7 +2224,7 @@ Transform:
   m_GameObject: {fileID: 1995700893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.12, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
