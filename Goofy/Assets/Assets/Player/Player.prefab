@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 6536976360466047510}
   - component: {fileID: 8452651876432138411}
   - component: {fileID: 7128798019291967134}
+  - component: {fileID: 6253220536488627962}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,6 +160,25 @@ MonoBehaviour:
   interactionLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &6253220536488627962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3646001943338730008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cec899cae2dc8e46bc9b173368ec2f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 1751189878651599424}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  moveSpeed: 20
+  dragAmnt: 5
+  playerHeight: 1
 --- !u!1 &4986512491092383688
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +460,6 @@ GameObject:
   - component: {fileID: 2587970225504255582}
   - component: {fileID: 8281091539101045927}
   - component: {fileID: 4976135606412794633}
-  - component: {fileID: 3914512589815314292}
   m_Layer: 0
   m_Name: PlayerObj
   m_TagString: Untagged
@@ -491,7 +510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: 3af4e00613408da408b4a20189275537, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -536,18 +555,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3914512589815314292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6116275805689258447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a808f5720cf67694a8272874be3bdba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8735022883737636933
 GameObject:
   m_ObjectHideFlags: 0
