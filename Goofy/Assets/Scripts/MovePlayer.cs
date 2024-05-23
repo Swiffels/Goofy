@@ -49,8 +49,6 @@ public class MovePlayer : MonoBehaviour
             rb.drag = dragAmnt;
         else
             rb.drag = 0;
-
-        Debug.Log(rb.velocity.magnitude);
     }
 
     void FixedUpdate()
