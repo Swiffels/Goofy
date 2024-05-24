@@ -8,18 +8,18 @@ public class PlayerInteract : MonoBehaviour
 
     [SerializeField] float interactRange = 2f;
     [SerializeField] float interactRadius = 1f;
-    [SerializeField] LayerMask interactionLayer;
     [SerializeField] Transform playerCamera;
 
     void Update()
     {
+        
         if(Input.GetKeyDown(KeyCode.E)){
 
             RaycastHit hit;
 
-            Debug.Log(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange));
+            int interactionLayer = LayerMask.GetMask("Pickups");
 
-            if(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange)){
+            if(Physics.SphereCast(playerCamera.position, interactRadius, playerCamera.forward, out hit, interactRange, interactionLayer, QueryTriggerInteraction.Ignore)){
 
                 Debug.Log("Hit Pickup Object Named: " + hit.collider.name);
 
@@ -35,9 +35,12 @@ public class PlayerInteract : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange)) {
+        int interactionLayer = LayerMask.GetMask("Pickups");
 
-        Gizmos.DrawLine(playerCamera.position, hit.point); 
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange, interactionLayer)) {
+
+            Gizmos.DrawWireSphere(playerCamera.position, interactRadius); 
+            Gizmos.DrawWireSphere(hit.point, interactRadius);
 
         }
 
