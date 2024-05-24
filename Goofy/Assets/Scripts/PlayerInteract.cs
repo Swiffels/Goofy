@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+interface IInteractable{
+    public void Interact();
+}
+
 public class PlayerInteract : MonoBehaviour
 {
 
@@ -21,7 +25,9 @@ public class PlayerInteract : MonoBehaviour
 
             if(Physics.SphereCast(playerCamera.position, interactRadius, playerCamera.forward, out hit, interactRange, interactionLayer, QueryTriggerInteraction.Ignore)){
 
-                Debug.Log("Hit Pickup Object Named: " + hit.collider.name);
+                if(hit.collider.gameObject.TryGetComponent(out IInteractable interactObj)){
+                    interactObj.Interact();
+                }
 
             }
 

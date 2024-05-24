@@ -40,7 +40,7 @@ public class MovePlayer : MonoBehaviour
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         if(flatVel.magnitude > moveSpeed){
             Vector3 limitVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitVel.x, rb.velocity.y, limitVel.y);
+            rb.velocity = new Vector3(limitVel.x, rb.velocity.y, limitVel.z);
         }
 
         // Ground check + drag
