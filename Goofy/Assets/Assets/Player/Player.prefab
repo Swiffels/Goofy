@@ -159,7 +159,9 @@ MonoBehaviour:
   interactRadius: 20
   interactionLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
+  playerCamera: {fileID: 4054803394043702308}
+  orientation: {fileID: 1751189878651599424}
 --- !u!114 &6253220536488627962
 MonoBehaviour:
   m_ObjectHideFlags: 0

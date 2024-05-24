@@ -9,16 +9,17 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] float interactRange = 2f;
     [SerializeField] float interactRadius = 1f;
     [SerializeField] LayerMask interactionLayer;
+    [SerializeField] Transform playerCamera;
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E)){
 
-            Debug.Log("E Pressed");
-
             RaycastHit hit;
 
-            if(Physics.SphereCast(transform.position, interactRadius, transform.forward, out hit, interactRange, interactionLayer)){
+            Debug.Log(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange));
+
+            if(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange)){
 
                 Debug.Log("Hit Pickup Object Named: " + hit.collider.name);
 
@@ -26,6 +27,20 @@ public class PlayerInteract : MonoBehaviour
 
         }
         
+    }
+
+    void OnDrawGizmos(){
+
+        Gizmos.color = Color.blue;
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, interactRange)) {
+
+        Gizmos.DrawLine(playerCamera.position, hit.point); 
+
+        }
+
     }
 
 }
